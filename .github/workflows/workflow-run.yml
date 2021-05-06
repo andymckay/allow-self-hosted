@@ -5,6 +5,8 @@ name: Workflow Run
 # Controls when the action will run. 
 on:
   workflow_run:
+    workflows: ["Manual Run"]
+    branches: [main]
     types:
     - requested
 
