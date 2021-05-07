@@ -28,3 +28,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+      - name: Something slow
+        run: |
+          echo 'Try to cancel me, I dare you'
+          sleep 360
+          echo 'Finished sleeping'
