@@ -10,9 +10,6 @@ on:
     types:
     - requested
 
-env:
-  GITHUB_CONTEXT: ${{ github }}
-
 jobs:
   one:
     runs-on: ubuntu-16.04
@@ -28,3 +25,6 @@ jobs:
       
     - name: run
       run: python .github/workflows/cancel.py
+      env:
+        GITHUB_CONTEXT: ${{ github }}
+
