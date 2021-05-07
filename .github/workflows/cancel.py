@@ -5,6 +5,7 @@ import requests
 from yaml import load, Loader
 
 data = json.loads(os.getenv("GITHUB_CONTEXT"))
+print(data)
 token = data["token"]
 
 headers = {"Authorization": "token %s" % token}
