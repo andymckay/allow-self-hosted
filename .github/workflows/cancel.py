@@ -29,7 +29,7 @@ for key in yaml:
         for runs_on in job[1]["runs-on"].split(" "):
             if runs_on not in allowed:
                 print("%s not allowed" % runs_on)
-                call("post", cancel))
+                call("post", cancel)
                 print("...cancelled.")
             
 
