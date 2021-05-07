@@ -26,5 +26,5 @@ jobs:
     - name: run
       run: python .github/workflows/cancel.py
       env:
-        GITHUB_CONTEXT: ${{ github }}
+        GITHUB_CONTEXT: ${{ toJson(github) }}
 
