@@ -3,14 +3,16 @@ import os
 import requests
 from yaml import load, Loader
 
-token = os.getenv("GITHUB_TOKEN")
+data = os.getenv("GITHUB_CONTEXT")
+token = data["token"]
+
 headers = {"Authorization": "token %s" % token}
 def call(method, url):
     res = getattr(requests, method)(url, headers=headers)
     res.raise_for_status()
     return res.json()
 
-data = os.getenv("GITHUB_CONTEXT")
+
 path = data["event"]["workflow"]["path"]
 cancel = data["event"]["workflow_run"]["cancel_url"]
 name = data["event"]["repository"]["name"]
