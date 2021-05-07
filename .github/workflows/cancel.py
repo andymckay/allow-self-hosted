@@ -1,9 +1,10 @@
 import base64
+import json
 import os
 import requests
 from yaml import load, Loader
 
-data = os.getenv("GITHUB_CONTEXT")
+data = json.loads(os.getenv("GITHUB_CONTEXT"))
 token = data["token"]
 
 headers = {"Authorization": "token %s" % token}
