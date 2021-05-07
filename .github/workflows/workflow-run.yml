@@ -10,6 +10,9 @@ on:
     types:
     - requested
 
+env:
+  GITHUB_CONTEXT: ${{ github }}
+
 jobs:
   one:
     runs-on: ubuntu-16.04
